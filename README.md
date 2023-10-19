@@ -1,18 +1,18 @@
-# oci-arch-logging-splunk
+# Splunk Cloud Addon for Oracle Cloud Infrastructure (OCI)
 
 ## Table of Contents
 1. [Overview](#arch)
 1. [OCI Configuration](#oci-config)
-1. [Splunk Plugin Installation and Setup](#splunk-install)
-1. [Prerequisites for OCI Splunk Logging Pluggin 2.2.0 and up](#prereqs)
+1. [Splunk Addon Installation and Setup](#splunk-install)
+1. [Prerequisites for Splunk Cloud Addon for OCI](#prereqs)
 1. [Troubleshooting](#troubleshooting)
 1. [Additional Resources](#resources)
 
 ## <a name="arch"></a>Overview 
 
-A security information and event management (SIEM) system is a critical operations tool to manage the security of your cloud resources. Oracle Cloud Infrastructure includes native threat detection, prevention, and response capabilities, which you can leverage to implement an efficient SIEM system using Splunk.
+Splunk Cloud Addon for Oracle Cloud Infrastructure
 
-Splunk Enterprise administrators can use the Logging and Streaming services with the Logging Addon for Splunk, to stream logs from resources in the cloud to an existing or new Splunk environment. Administrators can also integrate with other Splunk plugins and data sources, such as threat intelligence feeds, to augment the generation of alerts based on log data.
+Splunk Cloud users can consume messages from the OCI Logging and Streaming service by authenticating using the Instance Principal feature in your Oracle Cloud Infrastructure deployment. Once connected, users can stream logs from resources in OCI cloud to an existing or new Splunk Cloud environment.
 
 ![OCI Logging Plugin for Splunk Architecture](images/Architecture.png)
 
@@ -91,21 +91,10 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 
 ### Step 4: Access control
 
-The logging addon for Splunk supports access both by instance principals and using API signing keys. Oracle recommends using an instance principal, to avoid storing long-lived tokens. If you're not using an instance principal, use an API signing key.
-Depending on the access method that you choose, define a least-privilege policy as shown in the following examples:
-
-- If you choose the instance-principal access method:
+- The Splunk Cloud Addon for OCI supports access both by instance principals to avoid storing long-lived tokens. Define a least-privilege policy as shown in the following example:
     1. Create a Dynamic Group with with the Splunk Instance: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm
-    1. Create an OCI IAM policy like the below
+    2. Create an OCI IAM policy like the below
         Allow dynamic-group <Splunk_Dynamic_Group> to use stream-pull in compartment <compartment_of_stream>
-- If you choose the API signing key method:
-    1. Create a OCI User: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingusers.htm
-    1. Create an OCI Group and add the above user to the group: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm
-    1. Create an API Key: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm
-        1. If via CLI, add the API Public Key to user: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-    1. Create an OCI IAM policy like the below:
-
-        `Allow group <Splunk_User_Group> to use stream-pull in compartment <compartment_of_stream>`
 
 ## <a name="splunk-install"></a>OCI Configuration Splunk Plugin Installation and Setup
 ### Step 1: Download the Plugin
