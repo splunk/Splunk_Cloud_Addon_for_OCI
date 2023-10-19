@@ -156,13 +156,7 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
 -  'Search and Reporting" and search for the following `index=_internal error oci`
     - Authentication Error will appear here
     - Ignore UI related issues
-- Enable Debug Logging: 
-    - Edit $SPLUNK_HOME/etc/apps/oci-logging-addon-v2/bin/oci_logging.py
-    - Change: `logger.basicConfig(level=logger.ERROR, format='%(asctime)s %(levelname)s %(message)s',` 
-    - To: `logger.basicConfig(level=logger.DEBUG, format='%(asctime)s %(levelname)s %(message)s',`
-    - Go to the Heavy Forwarder:
-    - Data Inputs → OCI Logging ▪ Disable and Enable the input
-    - Log file location - `$SPLUNK_HOME/var/log/splunk/oci_logging.log`
+
 
 ## <a name="resources"></a>Addtional Resources
 - Visualization App for OCI (Oracle Cloud Infrastructure) App for Splunk: [https://splunkbase.splunk.com/app/5289/](https://splunkbase.splunk.com/app/5289/)
