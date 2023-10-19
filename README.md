@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Overview](#arch)
 1. [OCI Configuration](#oci-config)
-1. [Splunk Addon Installation and Setup](#splunk-install)
+1. [Splunk Cloud Addon Installation and Setup](#splunk-install)
 1. [Prerequisites for Splunk Cloud Addon for OCI](#prereqs)
 1. [Troubleshooting](#troubleshooting)
 1. [Additional Resources](#resources)
@@ -91,17 +91,17 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 
 ### Step 4: Access control
 
-- The Splunk Cloud Addon for OCI supports access both by instance principals to avoid storing long-lived tokens. Define a least-privilege policy as shown in the following example:
+- The Splunk Cloud Addon for OCI supports access by instance principals to avoid storing long-lived tokens. Define a least-privilege policy as shown in the following example:
     1. Create a Dynamic Group with with the Splunk Instance: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm
     2. Create an OCI IAM policy like the below
         Allow dynamic-group <Splunk_Dynamic_Group> to use stream-pull in compartment <compartment_of_stream>
 
-## <a name="splunk-install"></a>OCI Configuration Splunk Plugin Installation and Setup
+## <a name="splunk-install"></a>OCI Configuration Splunk Cloud Addon Installation and Setup
 ### Step 1: Download the Plugin
 
-Download plugin: https://objectstorage.us-phoenix-1.oraclecloud.com/n/pcainkar/b/Public_Files/o/oci_logging_addon%2Flatest.html
+Download the Splunk Cloud Addon for OCI from https://splunkbase.com
 
-### Step 2: Install the Plugin on the Splunk Heavy Forwarder (v8 or greater)
+### Step 2: Install the Splunk Cloud Addon on the Splunk Heavy Forwarder (v8 or greater)
 
 Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singleserverinstall
 
@@ -110,7 +110,7 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
 1. If Splunk Enterprise prompts you to restart, do so.
 1. Verify that the add-on appears in the list of apps and add-ons. You can also find it on the server at $SPLUNK_HOME/etc/apps/<Name_of_add-on>.
 
-### Step 3: Setup the Plugin on the Heavy Forwarder
+### Step 3: Setup the Splunk Cloud Addon in Splunk Cloud
 
 1. On the Splunk console, navigate to **Settings** then **Data Inputs**
 1. Click on **OCI Logging**
@@ -125,28 +125,10 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
         - Stream Endpoint - Endpoint of the Stream ex. https://cell-1.streaming.<regin>.oci.oraclecloud.com
         - OCI Region - OCI region the stream is in ex. us-ashburn-1 (https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm)
     - OCI Authentication Credentials
-        - If you chose Use Instance Principal in OCI Configuration → Step 4: Access Control
+        - Splunk Cloud Addon uses Instance Principal in OCI Configuration → Step 4: Access Control
             Select Use Instance Principal.  This means the heavy forwarder must be running in OCI.
-            - Then  skip to **More settings**
-        -  Copy the OCI API Key to the Heavy Forwarder's local file system (Console Generated and CLI RSA API Key)
-            1. Copy the OCI API Private Key to the Splunk Heavy Forwader ex. /opt/splunk/etc/apps/oci-logging-addon-v2/key/key.pem
-            1. **Private Key File Location** - The fully qualified file name of the API Key on the Splunk - Heavy Forwarder ex. /opt/splunk/etc/apps/oci-logging-addon-v2/key/key.pem
-            1. **Private Key Passphrase** - Password for the private key if required.
-            1. **Tenancy OCID** - Unique Identifier of the tenancy ex. ocid1.tenancy.oc1.....
-            1. **User OCID** - Unique Identifier of the OCI IAM Local user associated with API key ex. ocid1.user.oc1...
-            1. **Fingerprint** - Fingerprint of the OCI IAM API Key ex. aa:aa:aa:aa:aa:ae:aa:aa:aa:aa:aa:aa:ac:aa:aa:aa
-            1. Select **More settings**
- 
-                    
-    - More Setting 
-        -   **Private Key via UI Upload** - **Depreciated** for backwards compatibility only
-            - Documentation on how to create an RSA OCI API Key is [here](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#two)
-                1. **Private Key** - Upload the RSA OCI API Key file. 
-                1. **Private Key File Location** - leave blank
-                1. **Private Key Passphrase** - Password for the private key if required.
-                1. **Tenancy OCID** - Unique Identifier of the tenancy ex. ocid1.tenancy.oc1.....
-                1. **User OCID** - Unique Identifier of the OCI IAM Local user associated with API key ex. ocid1.user.oc1...
-                1. **Fingerprint** - Fingerprint of the OCI IAM API Key ex. aa:aa:aa:aa:aa:ae:aa:aa:aa:aa:aa:aa:ac:aa:aa:aa
+                
+    - More Settings
         - **Worker Processes** - number of partitions in the OCI Stream created in OCI Configuration → Step 2: Create
         - **Message Limit** - number of messages limit default is 10000
         - **Retry Interval** - number of seconds to sleep after getting a backoff request - default is 90 seconds
@@ -155,15 +137,11 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
 5. Click **Next**
 
 
-## <a name="preqs"></a>Prerequisites for OCI Splunk Logging Pluggin 2.2.0 and up
+## <a name="preqs"></a>Prerequisites for Splunk Cloud Addon for OCI
 ### **Supported Systems**: Linux
 ### **Splunk Version**: 8 or above
 ### **Deployment Models**: ###
-- Customer owned Splunk Heavy Forwarder running on-premises forwarding to
-    - Splunk on-premises (requires VPN or FastConnect)
-    - Splunk Cloud
 - Customer owned Splunk Heavy Forwarder running on an OCI Compute Instance(Instance Principal authentications) forwarding to:
-    - Splunk on-premises (requires VPN or FastConnect)
     - Splunk Cloud
 
 ## <a name="troubleshooting"></a>Troubleshooting
@@ -174,14 +152,6 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
         [settings]
         splunkdConnectionTimeout = 600 
         ```
-- OCI API Key Issues:
-    - 8.0.x must use a OCI API Key stored on the Heavy Forwarder's Local File System 
-    - 8.2.2 and up must use a OCI API Key stored on the Heavy Forwarder's Local File System 
-    - If there is an issue with the OCI API key uploaded via the Web UI, have them validate that its a valid RSA key
-        - Instructions for creating the key are located here - [https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm)
-        - If there is a valid API Key getting `Splitted: 1` in your Splunk logs
-            - CLRF - windows line feed – plugin can’t parse
-- Ensure you have the current version of the OCI Splunk Logging plugin. The current version is available [here](https://objectstorage.us-phoenix-1.oraclecloud.com/n/pcainkar/b/Public_Files/o/oci_logging_addon%2Flatest.html)
 - Check your Splunk python3 version `$SPLUNK_HOME/bin/python3 --version` is python 3.7.11 or below
 -  'Search and Reporting" and search for the following `index=_internal error oci`
     - Authentication Error will appear here
