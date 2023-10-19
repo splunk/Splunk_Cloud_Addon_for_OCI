@@ -12,7 +12,7 @@
 
 Splunk Cloud Addon for Oracle Cloud Infrastructure
 
-Splunk Cloud users can consume messages from the OCI Logging and Streaming service by authenticating using the Instance Principal feature in your Oracle Cloud Infrastructure deployment. Once connected, users can stream logs from resources in OCI cloud to an existing or new Splunk Cloud environment.
+Splunk Cloud users can consume messages from the OCI Logging and Streaming service by authenticating using the Instance Principal feature in your Oracle Cloud Infrastructure deployment. Once connected, users can stream logs from resources in Oracle Cloud Infrastructure (OCI) to an existing or new Splunk Cloud environment.
 
 ![OCI Logging Plugin for Splunk Architecture](images/Architecture.png)
 
@@ -97,7 +97,7 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
         Allow dynamic-group <Splunk_Dynamic_Group> to use stream-pull in compartment <compartment_of_stream>
 
 ## <a name="splunk-install"></a>OCI Configuration Splunk Cloud Addon Installation and Setup
-### Step 1: Download the Plugin
+### Step 1: Download the Splunk Cloud Addon for OCI
 
 Download the Splunk Cloud Addon for OCI from https://splunkbase.com
 
@@ -145,7 +145,7 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
     - Splunk Cloud
 
 ## <a name="troubleshooting"></a>Troubleshooting
-- When trying to install the plugin get following: **"Error connecting to /services/apps/local: The read operation timed out"** 
+- When trying to install the Splunk Cloud Addon for OCI get following: **"Error connecting to /services/apps/local: The read operation timed out"** 
     - Please follow the instructions here [https://community.splunk.com/t5/All-Apps-and-Add-ons/install-add-on-Error-connecting-to-services-apps-local-The-read/m-p/490613](https://community.splunk.com/t5/All-Apps-and-Add-ons/install-add-on-Error-connecting-to-services-apps-local-The-read/m-p/490613)
         ```
         and increase the following timeout in the web.conf
