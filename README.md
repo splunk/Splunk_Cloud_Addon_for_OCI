@@ -14,7 +14,7 @@ Splunk Cloud Addon for Oracle Cloud Infrastructure
 
 Splunk Cloud users can consume messages from the OCI Logging and Streaming service by authenticating using the Instance Principal feature in your Oracle Cloud Infrastructure deployment. Once connected, users can stream logs from resources in Oracle Cloud Infrastructure (OCI) to an existing or new Splunk Cloud environment.
 
-![OCI Logging Plugin for Splunk Architecture]((https://github.com/splunk/Splunk_Cloud_Addon_for_OCI/issues/1#issue-2024893906)
+![OCI Logging Plugin for Splunk Architecture](https://private-user-images.githubusercontent.com/77514808/287861787-de9e1fbd-ead0-46a7-b0bf-31dc460e1234.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE3Mjk3NzksIm5iZiI6MTcwMTcyOTQ3OSwicGF0aCI6Ii83NzUxNDgwOC8yODc4NjE3ODctZGU5ZTFmYmQtZWFkMC00NmE3LWIwYmYtMzFkYzQ2MGUxMjM0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA0VDIyMzc1OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM2YzIxMDdlYTllODNkNWM0Yzk1MGU5Y2Y3ZjI0NWVkYjgzYzVjOGFjZDZlOTgzMjE2ZDc3MzhiNjgxZGVlZmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.S-BpW9kElqTEyMnjGhg99C-ZmGG0dBRFlatzsbuRo0s))
 
 ## <a name="oci-config"></a>OCI Configuration 
 ### Step 1: Create a Stream
