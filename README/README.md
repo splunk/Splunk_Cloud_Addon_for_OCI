@@ -1,4 +1,3 @@
-# oci-arch-logging-splunk
 
 ## Table of Contents
 1. [Overview](#arch)
@@ -14,7 +13,8 @@ A security information and event management (SIEM) system is a critical operatio
 
 Splunk Enterprise administrators can use the Logging and Streaming services with the Logging Addon for Splunk, to stream logs from resources in the cloud to an existing or new Splunk environment. Administrators can also integrate with other Splunk plugins and data sources, such as threat intelligence feeds, to augment the generation of alerts based on log data.
 
-![OCI Logging Plugin for Splunk Architecture](images/Architecture.png)
+![OCI Logging Plugin for Splunk Architecture](https://github.com/splunk/Splunk_Cloud_Addon_for_OCI/assets/77514808/d56298b6-2138-4aec-94f7-a43472ecdb1b)
+
 
 ## <a name="oci-config"></a>OCI Configuration 
 ### Step 1: Create a Stream
