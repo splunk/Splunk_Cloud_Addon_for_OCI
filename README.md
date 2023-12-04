@@ -19,7 +19,8 @@ Splunk Cloud users can consume messages from the OCI Logging and Streaming servi
 
 ## <a name="oci-config"></a>OCI Configuration 
 ### Step 1: Create a Stream
-![OCI Stream Setup](images/picture_strm.png)
+![OCI Stream Setup](https://github.com/splunk/Splunk_Cloud_Addon_for_OCI/assets/77514808/07259f61-fe1b-4d74-9e12-f9cc6183b13d)
+
 
 Refer the screenshot and the points listed below to to create a stream for log data to be written to for Splunk to collect from.
 
@@ -33,7 +34,8 @@ Refer the screenshot and the points listed below to to create a stream for log d
 ### Step 2 (Optional): Enable a Service ex. VCN Flow Log
 
 In this step, You will create a log group and configure an example log using Virtual Cloud Network (VCN) Flow Logs.
-![Log Resource Setup](images/picture_log.png)
+![Log Resource Setup](https://github.com/splunk/Splunk_Cloud_Addon_for_OCI/assets/77514808/4475506f-bafc-4a07-bb09-4a0a5219d2c3)
+
 
 Refer the screenshot and the points listed below to complete Step 1.
 
@@ -58,7 +60,8 @@ Refer the screenshot and the points listed below to complete Step 1.
 ### Step 3: Create a Service Connector in OCI Logging
 
 Refer the screenshot and the points listed below to complete Step 3 to create a Service Connector in OCI Logging.
-![Service Connector Setup](images/picture_sc.png)
+![Service Connector Setup](https://github.com/splunk/Splunk_Cloud_Addon_for_OCI/assets/77514808/9a51c329-051d-402f-8239-44c578afa2cf)
+
 
 1. Open the navigation menu. Under Logging, click **Service Connectors**.
 1. Choose the Compartment where you want to create the service connector.
@@ -100,7 +103,7 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 ## <a name="splunk-install"></a>OCI Configuration Splunk Cloud Addon Installation and Setup
 ### Step 1: Download the Splunk Cloud Addon for OCI
 
-Download the Splunk Cloud Addon for OCI from https://splunkbase.com
+Download the Splunk Cloud Addon for OCI from [https://splunkbase.com](https://splunkbase.splunk.com/app/7021)
 
 ### Step 2: Install the Splunk Cloud Addon on the Splunk Heavy Forwarder (v8 or greater)
 
@@ -114,10 +117,11 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
 ### Step 3: Setup the Splunk Cloud Addon in Splunk Cloud
 
 1. On the Splunk console, navigate to **Settings** then **Data Inputs**
-1. Click on **OCI Logging**
+1. Click on **OCI Logging Cloud**
 1. Click **New** *Refer the screenshot and the points listed below to complete Step 3*
 
-![Splunk OCI Logging Data Input](images/picture_splk.png)
+![Splunk OCI Logging Data Input](https://github.com/splunk/Splunk_Cloud_Addon_for_OCI/assets/77514808/a8ba2e19-93fd-45e7-87d2-74b459b1132a)
+
 
 4. Configure the stream specific information from the information under OCI Configuration or https://docs.oracle.com/en/solutions/logs-stream-splunk/index.html:
     - OCI Logging Stream
