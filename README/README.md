@@ -140,8 +140,8 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
             Select Use Instance Principal.  This means the heavy forwarder must be running in OCI.
             - Then  skip to **More settings**
         -  Copy the OCI API Key to the Heavy Forwarder's local file system (Console Generated and CLI RSA API Key)
-            1. Copy the OCI API Private Key to the Splunk Heavy Forwader ex. /opt/splunk/etc/apps/oci-logging-addon-v2/key/key.pem
-            1. **Private Key File Location** - The fully qualified file name of the API Key on the Splunk - Heavy Forwarder ex. /opt/splunk/etc/apps/oci-logging-addon-v2/key/key.pem
+            1. Copy the OCI API Private Key to the Splunk Heavy Forwader ex. /opt/splunk/etc/apps/TA-oci-logging-addon/key/key.pem
+            1. **Private Key File Location** - The fully qualified file name of the API Key on the Splunk - Heavy Forwarder ex. /opt/splunk/etc/apps/TA-oci-logging-addon/key/key.pem
             1. **Private Key Passphrase** - Password for the private key if required.
             1. **Tenancy OCID** - Unique Identifier of the tenancy ex. ocid1.tenancy.oc1.....
             1. **User OCID** - Unique Identifier of the OCI IAM Local user associated with API key ex. ocid1.user.oc1...
