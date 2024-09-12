@@ -73,7 +73,7 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 1. Configure Service Connector:
     1. Select Source: Logging
     1. Select Target: Streaming
-1. Under configure source connection(_Audit Logs):
+1. Under configure source connection (_Audit Logs):
     1. Compartment: Select the *(root)* compartment
     1. Log Group: Select *_Audit*
         1. Check: **Include _Audit in subcompartments** to collect all compartment logs 
