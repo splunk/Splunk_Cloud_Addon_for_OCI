@@ -1,6 +1,5 @@
 __pycache__/
 output/
-local/
 local.meta
 .venv
 .vscode
