@@ -3,7 +3,7 @@
 1. [Overview](#arch)
 1. [OCI Configuration](#oci-config)
 1. [Splunk Plugin Installation and Setup](#splunk-install)
-1. [Prerequisites for OCI Splunk Logging Pluggin 2.2.0 and up](#prereqs)
+1. [Prerequisites for OCI Splunk Logging Plugin 2.2.0 and up](#prereqs)
 1. [Troubleshooting](#troubleshooting)
 1. [Additional Resources](#resources)
 
@@ -69,11 +69,11 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 1. Configure Service Connector:
     1. Select Source: Logging
     1. Select Target: Streaming
-1. Under configure source connection(_Audit Logs):
+1. Under configure source connection (_Audit Logs):
     1. Compartment: Select the *(root)* compartment
     1. Log Group: Select *_Audit*
         1. Check: **Include _Audit in subcompartments** to collect all compartment logs 
-1. Under configure source connection(Service Log):
+1. Under configure source connection (Service Log):
     1. Click **++Another Log**
     1. Compartment: Select the compartment that contains your log group.
     1. Log Group: Select the log group created in step 1.
@@ -95,7 +95,7 @@ The logging addon for Splunk supports access both by instance principals and usi
 Depending on the access method that you choose, define a least-privilege policy as shown in the following examples:
 
 - If you choose the instance-principal access method:
-    1. Create a Dynamic Group with with the Splunk Instance: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm
+    1. Create a Dynamic Group with the Splunk Instance: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm
     1. Create an OCI IAM policy like the below
         Allow dynamic-group <Splunk_Dynamic_Group> to use stream-pull in compartment <compartment_of_stream>
 - If you choose the API signing key method:
@@ -140,8 +140,8 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
             Select Use Instance Principal.  This means the heavy forwarder must be running in OCI.
             - Then  skip to **More settings**
         -  Copy the OCI API Key to the Heavy Forwarder's local file system (Console Generated and CLI RSA API Key)
-            1. Copy the OCI API Private Key to the Splunk Heavy Forwader ex. /opt/splunk/etc/apps/oci-logging-addon-v2/key/key.pem
-            1. **Private Key File Location** - The fully qualified file name of the API Key on the Splunk - Heavy Forwarder ex. /opt/splunk/etc/apps/oci-logging-addon-v2/key/key.pem
+            1. Copy the OCI API Private Key to the Splunk Heavy Forwader ex. /opt/splunk/etc/apps/TA-oci-logging-addon/key/key.pem
+            1. **Private Key File Location** - The fully qualified file name of the API Key on the Splunk - Heavy Forwarder ex. /opt/splunk/etc/apps/TA-oci-logging-addon/key/key.pem
             1. **Private Key Passphrase** - Password for the private key if required.
             1. **Tenancy OCID** - Unique Identifier of the tenancy ex. ocid1.tenancy.oc1.....
             1. **User OCID** - Unique Identifier of the OCI IAM Local user associated with API key ex. ocid1.user.oc1...
@@ -166,7 +166,7 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
 5. Click **Next**
 
 
-## <a name="preqs"></a>Prerequisites for OCI Splunk Logging Pluggin 2.2.0 and up
+## <a name="preqs"></a>Prerequisites for OCI Splunk Logging Plugin 2.2.0 and up
 ### **Supported Systems**: Linux
 ### **Splunk Version**: 8 or above
 ### **Deployment Models**: ###
@@ -205,5 +205,5 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
     - Data Inputs → OCI Logging ▪ Disable and Enable the input
     - Log file location - `$SPLUNK_HOME/var/log/splunk/oci_logging.log`
 
-## <a name="resources"></a>Addtional Resources
+## <a name="resources"></a>Additional Resources
 - Visualization App for OCI (Oracle Cloud Infrastructure) App for Splunk: [https://splunkbase.splunk.com/app/5289/](https://splunkbase.splunk.com/app/5289/)

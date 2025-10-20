@@ -73,11 +73,11 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 1. Configure Service Connector:
     1. Select Source: Logging
     1. Select Target: Streaming
-1. Under configure source connection(_Audit Logs):
+1. Under configure source connection (_Audit Logs):
     1. Compartment: Select the *(root)* compartment
     1. Log Group: Select *_Audit*
         1. Check: **Include _Audit in subcompartments** to collect all compartment logs 
-1. Under configure source connection(Service Log):
+1. Under configure source connection (Service Log):
     1. Click **++Another Log**
     1. Compartment: Select the compartment that contains your log group.
     1. Log Group: Select the log group created in step 1.
@@ -96,7 +96,7 @@ Refer the screenshot and the points listed below to complete Step 3 to create a 
 ### Step 4: Access control
 
 - The Splunk Cloud Addon for OCI supports access by instance principals to avoid storing long-lived tokens. Define a least-privilege policy as shown in the following example:
-    1. Create a Dynamic Group with with the Splunk Instance: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm
+    1. Create a Dynamic Group with the Splunk Instance: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingdynamicgroups.htm
     2. Create an OCI IAM policy like the below
         Allow dynamic-group <Splunk_Dynamic_Group> to use stream-pull in compartment <compartment_of_stream>
 
@@ -146,7 +146,7 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
 ### **Supported Systems**: Linux
 ### **Splunk Version**: 8 or above
 ### **Deployment Models**: ###
-- Customer owned Splunk Heavy Forwarder running on an OCI Compute Instance(Instance Principal authentications) forwarding to:
+- Customer owned Splunk Heavy Forwarder running on an OCI Compute Instance (Instance Principal authentications) forwarding to:
     - Splunk Cloud
 
 ## <a name="troubleshooting"></a>Troubleshooting
@@ -163,11 +163,11 @@ Directions: https://docs.splunk.com/Documentation/AddOns/released/Overview/Singl
     - Ignore UI related issues
 
 
-## <a name="resources"></a>Addtional Resources
+## <a name="resources"></a>Additional Resources
 - Visualization App for OCI (Oracle Cloud Infrastructure) App for Splunk: [https://splunkbase.splunk.com/app/5289/](https://splunkbase.splunk.com/app/5289/)
 
 ## <a name="licenses"></a>License
-Copyright 2023 Splunk Inc.
+Copyright 2024 Splunk Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License. 
